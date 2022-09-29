@@ -26,15 +26,15 @@ function ColorSpot({color}: {color: string}) {
 
 function App() {
   const [primaryColor, setPrimaryColor] = useState<string>(defaultColor)
-  const [complementerColor, setComplementerColor] = useState<string>(
+  const [complementaryColor, setComplementerColor] = useState<string>(
     getComplementerColor(defaultColor),
   )
 
   function getComplementerColor(originalColor: string): string {
     const [originalHue, s, l] = chroma(originalColor).hsl()
-    const complementerColor = chroma.hsl(originalHue + 180, s, l).hex()
+    const complementaryColor = chroma.hsl(originalHue + 180, s, l).hex()
 
-    return complementerColor
+    return complementaryColor
   }
   useLayoutEffect(() => {
     // `useLayoutEffect` is executed twice
@@ -72,11 +72,11 @@ function App() {
   return (
     <div className="App">
       <h1>
-        Complementer Colors with <code>Chroma.js</code>
+        Complementary Colors with <code>Chroma.js</code>
       </h1>
       <div className="colors-container">
         <ColorSpot color={primaryColor} />
-        <ColorSpot color={complementerColor} />
+        <ColorSpot color={complementaryColor} />
       </div>
     </div>
   )
