@@ -1,4 +1,4 @@
-import { adjustHue, parseToHsla, toHex } from "color2k";
+import { adjustHue, getLuminance, parseToHsla, toHex } from "color2k";
 import GUI from "lil-gui";
 import { useLayoutEffect, useState } from "react";
 import "./App.css";
@@ -13,7 +13,6 @@ gui.onFinishChange(() => {
 });
 
 function ColorSpot({ color }: { color: string }) {
-  console.log(parseToHsla(color).at(2));
   const [, , l] = parseToHsla(color);
 
   return (
