@@ -2,7 +2,6 @@ import { adjustHue, getLuminance, parseToHsla, toHex } from "color2k";
 import GUI from "lil-gui";
 import { useLayoutEffect, useState } from "react";
 import "./App.css";
-// import color2k from "color2k";
 
 const defaultColor = "#ffe771";
 const gui = new GUI();
